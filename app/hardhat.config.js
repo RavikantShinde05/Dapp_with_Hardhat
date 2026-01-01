@@ -1,4 +1,4 @@
-const { artifacts } = require("hardhat");
+const { artifacts } = require("hardhat"); // this importing Hardhat module may cause module import error while compiling.
 
 require("@nomicfoundation/hardhat-toolbox");
 
