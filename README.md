@@ -1,18 +1,64 @@
-# Dapp_with_Hardhat
-This is a beginners Project in which A Dapp is created with the halp of react and Hardhat.
+# Dapp_with_Hardhat (Hardhat 2):
 
+## This is a beginners Project in which A Dapp is created with the halp of react and Hardhat.
+
+### 1. Creating a react app:
 first we are going to create a react app using this command 
 ```
 npx create-react-app myapp
 ```
-then after creating my app install hardhat and dependencies in the same folder.
-to install first use this command
+### 2. Create Hardhat project and install all dependencies:
+Then after creating myapp, install hardhat and dependencies in the same folder.
+to install first use this command:
 ```
 npm install --save-dev hardhat@hh2
 ```
-then to initialize your project hardhat already provide a sample projects or templates also can create an hardhat empty config.js file for project to start from scratch, to initialize that put the following command 
+### 3. This Hardhat command will create Template for dapp:
+To initialize your project hardhat already provide a sample projects or templates also can create an hardhat empty config.js file for project to start from scratch, to initialize that put the following command 
 ```
 npx hardhat init
 ```
+this will create your project templates of hardhat project in myapp directory. Once you create template of project there are three main directories that is 
+- Contract,
+- Test,
+- Scripts/(ignition/modules/lock.js file)
 
- Also create an artifacts folder in Source folder "src" and provide the path in Hardhat config.js file.
+these helps us to create, compile, test and debug our contract.
+
+### 4. Compilation of Smart Contract: 
+
+After writting SmartContract use this command to Compile.
+```
+npx hardhat compile
+```
+after compilation of SmartContract all the necessary files will be created inside this artifacts directory such as contract.sol/contract.json 
+from where we can get our deployed contract's address and contracts ABI.
+
+- Also create an artifacts folder in Source directory "src" and provide the path in Hardhat config.js file.
+
+### 5. Run the Hardhat node on other terminal to get Accounts and LocalHost's Url:
+use this command to run a node
+```
+npx hardhat node
+```
+### 6. Testing of Smart Contract:
+Write some test to check the function which you have created in Smart Contract they should work as indeed and try to find out some bugs and debug them.
+
+```
+npx hardhat test
+```
+
+### 7.Next comes the Deployment part of the SmartContract :
+Hardhat allows us to run a local Blockchain's node (Local node / Local machine) on our local machine for build, compile, testing / debugging 
+and developing purpose of SmartContracr such as done on "testnet" 
+
+```
+npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost
+```
+or with localhost url
+```
+npx hardhat ignition deploy ./ignition/modules/Lock.js --network <your-network>
+```
+
+## tips
+don't close the terminal or else the hardhat will stop running node once you left. 
