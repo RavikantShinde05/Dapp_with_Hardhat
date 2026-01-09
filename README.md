@@ -1,4 +1,4 @@
-# Learn HARDHAT by building Dapp version(Hardhat 2):
+# Learn "HARDHAT" by building Dapp version(Hardhat 2):
 
 ## This is a beginners Project in which A Dapp is created with the halp of react and Hardhat.
 
